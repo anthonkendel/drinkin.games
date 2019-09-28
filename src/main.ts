@@ -1,9 +1,9 @@
 import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import "bulma/bulma.sass";
-import "./registerServiceWorker";
+import App from "@/App.vue";
+import router from "@/router/router";
+import store from "@/store/store";
+import "@/assets/scss/app.scss";
+import "@/sw";
 
 Vue.config.productionTip = false;
 
