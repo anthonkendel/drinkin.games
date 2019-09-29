@@ -3,39 +3,36 @@ import { RootState } from "./store";
 import Vue, { VueConstructor } from "vue";
 
 export const modalNamespace = "modal";
-export const setIsActive = "setIsActive";
-export const setComponent = "setComponent";
+export const setState = "setState";
+
 export const getIsActive = "getIsActive";
 export const getComponent = "getComponent";
+export const getProps = "getProps";
+
+const EmptyModal = Vue.extend({ name: "EmptyModal", render: h => h("div") });
 
 export interface ModalState {
   isActive: boolean;
-  componentWrapper: { component?: VueConstructor<Vue> };
+  component: VueConstructor<Vue>;
+  props: Record<string, any>;
 }
 
 export const modalModule: Module<ModalState, RootState> = {
   namespaced: true,
   state: {
     isActive: false,
-    componentWrapper: {}
+    component: EmptyModal,
+    props: {}
   },
   mutations: {
-    [setIsActive](state, isActive: boolean): void {
-      if (isActive === false) {
-        state.componentWrapper = {};
-      }
-      state.isActive = isActive;
-    },
-    [setComponent](state, component: VueConstructor<Vue>): void {
-      state.componentWrapper = { component };
+    [setState](state, newState: ModalState): void {
+      if (newState.isActive === false) state.component = EmptyModal;
+      Object.assign(state, newState);
     }
   },
   actions: {
-    [setIsActive]({ commit }, isActive: boolean): void {
-      commit(setIsActive, isActive);
-    },
-    [setComponent]({ commit }, component: VueConstructor<Vue>): void {
-      commit(setComponent, component);
+    [setState]({ commit }, newState: ModalState): void {
+      commit(setState, newState);
     }
   },
   getters: {
@@ -43,7 +40,10 @@ export const modalModule: Module<ModalState, RootState> = {
       return state.isActive;
     },
     [getComponent](state): VueConstructor<Vue> | undefined {
-      return state.componentWrapper.component;
+      return state.component;
+    },
+    [getProps](state): Record<string, any> {
+      return state.props;
     }
   }
 };

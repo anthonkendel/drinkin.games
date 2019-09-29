@@ -1,7 +1,7 @@
 <template>
   <div class="modal" :class="cssClass">
     <div class="modal-background"></div>
-    <component :is="component"></component>
+    <component :is="component" v-bind="props"></component>
     <button
       class="modal-close"
       aria-label="close"
@@ -15,12 +15,14 @@ import Vue from "vue";
 import {
   modalNamespace,
   getIsActive,
-  setIsActive,
-  getComponent
-} from "../store/modalModule";
+  getComponent,
+  setState,
+  getProps
+} from "@/store/modalModule";
+import { modalService } from "@/services/modalService";
 
 export default Vue.extend({
-  name: "BModalWrapper",
+  name: "ModalWrapper",
   computed: {
     cssClass(): Record<string, boolean> {
       return {
@@ -30,21 +32,16 @@ export default Vue.extend({
     component(): void {
       return this.$store.getters[`${modalNamespace}/${getComponent}`];
     },
-    isActive: {
-      get() {
-        return this.$store.getters[`${modalNamespace}/${getIsActive}`];
-      },
-      set() {
-        this.$store.dispatch(
-          `${modalNamespace}/${setIsActive}`,
-          !this.isActive
-        );
-      }
+    props(): Record<string, any> {
+      return this.$store.getters[`${modalNamespace}/${getProps}`];
+    },
+    isActive(): boolean {
+      return this.$store.getters[`${modalNamespace}/${getIsActive}`];
     }
   },
   methods: {
     onClickCloseModal(): void {
-      this.isActive = false;
+      modalService.close();
     }
   }
 });

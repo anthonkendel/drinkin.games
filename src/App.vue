@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <b-modal-wrapper></b-modal-wrapper>
+    <modal-wrapper></modal-wrapper>
     <navbar></navbar>
   </div>
 </template>
 
 <script lang="ts">
 import Navbar from "@/components/Navbar.vue";
-import BModalWrapper from "@/components/BModalWrapper.vue";
+import ModalWrapper from "@/components/ModalWrapper.vue";
 import Vue from "vue";
 
 export default Vue.extend({
   name: "App",
-  components: { BModalWrapper, Navbar }
+  components: { ModalWrapper, Navbar }
 });
 </script>

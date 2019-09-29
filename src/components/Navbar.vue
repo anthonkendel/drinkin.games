@@ -56,6 +56,7 @@ export default Vue.extend({
       console.log("SIGN UP");
     },
     onClickLogin(): void {
+      console.log("LOGIN");
       modalService.open(LoginModal);
     }
   },
