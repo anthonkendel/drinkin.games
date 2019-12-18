@@ -12,6 +12,7 @@
     "test:html-validate": "html-validate src/**/*.vue"
   },
   "dependencies": {
+    "bulma": "^0.8.0",
     "core-js": "^3.4.3",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
@@ -45,21 +46,24 @@
     "env": {
       "node": true
     },
+    "parser": "vue-eslint-parser",
+    "parserOptions": { "parser": "@typescript-eslint/parser" },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/recommended",
+      "plugin:@typescript-eslint/recommended",
       "eslint:recommended",
       "@vue/typescript"
     ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
+    "rules": {
+      "@typescript-eslint/indent": ["error", 2],
+      "@typescript-eslint/explicit-function-return-type": ["off"]
     },
+    "plugins": [
+      "vue"
+    ],
     "overrides": [
       {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
+        "files": ["**/*.test.[jt]s"],
         "env": {
           "jest": true
         }
@@ -72,6 +76,8 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
-    "testMatch": ["**/*.test.[jt]s"]
+    "testMatch": [
+      "**/*.test.[jt]s"
+    ]
   }
 }
