@@ -1,15 +1,56 @@
 <template>
   <d-modal>
-    <section class="modal-card-body">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et optio veniam nostrum. Debitis consequuntur eius id, pariatur vero distinctio quia magnam asperiores numquam itaque sint repellat provident libero, maiores assumenda!
-    </section>
+    <form
+      class="modal-card-body"
+      @submit.prevent="onSubmit"
+    >
+      <d-input-field
+        type="email"
+        required
+      >
+        Email
+      </d-input-field>
+      <d-input-field
+        type="password"
+        required
+      >
+        Password
+      </d-input-field>
+
+      <div class="buttons">
+        <d-button
+          type="submit"
+          color="primary"
+        >
+          Login
+        </d-button>
+
+        <d-button
+          type="button"
+          @click="onClickClose"
+        >
+          Cancel
+        </d-button>
+      </div>
+    </form>
   </d-modal>
 </template>
 
 <script lang="ts">
+import { store } from '@/store';
+import { close } from '@/logic/Modal';
 import Vue from 'vue';
 
 export default Vue.extend({
   name: 'LoginModal',
+  methods: {
+    onClickClose(): void {
+      close();
+    },
+    onSubmit(): void {
+      store.state.isLoggedIn = true;
+      this.onClickClose();
+    }
+  }
 });
 </script>

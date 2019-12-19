@@ -3,16 +3,19 @@
     id="app"
   >
     <main>
-      <router-view />
+      <router-view v-if="$store.state.isLoggedIn" />
+      <start v-else />
     </main>
   </div>
 </template>
 
 <script lang="ts">
+import Start from '@/views/Start.vue';
 import Vue from 'vue';
 
 export default Vue.extend({
   name: 'App',
+  components: { Start },
 });
 </script>
 

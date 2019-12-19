@@ -47,7 +47,9 @@
       "node": true
     },
     "parser": "vue-eslint-parser",
-    "parserOptions": { "parser": "@typescript-eslint/parser" },
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser"
+    },
     "extends": [
       "plugin:vue/recommended",
       "plugin:@typescript-eslint/recommended",
@@ -55,18 +57,33 @@
       "@vue/typescript"
     ],
     "rules": {
-      "@typescript-eslint/indent": ["error", 2],
-      "@typescript-eslint/explicit-function-return-type": ["off"],
-      "@typescript-eslint/semi": ["error", "always"],
-      "quotes": ["error", "single"],
-      "vue/html-self-closing": ["off"]
+      "@typescript-eslint/indent": [
+        "error",
+        2
+      ],
+      "@typescript-eslint/explicit-function-return-type": [
+        "off"
+      ],
+      "@typescript-eslint/semi": [
+        "error",
+        "always"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "vue/html-self-closing": [
+        "off"
+      ]
     },
     "plugins": [
       "vue"
     ],
     "overrides": [
       {
-        "files": ["**/*.test.[jt]s"],
+        "files": [
+          "**/*.test.[jt]s"
+        ],
         "env": {
           "jest": true
         }

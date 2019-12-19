@@ -1,5 +1,8 @@
 <template>
-  <div class="modal is-active">
+  <div
+    class="modal is-active"
+    @keyup.esc="onClickClose"
+  >
     <div
       v-if="background"
       class="modal-background"
