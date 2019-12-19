@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import DControl from './DControl.vue';
-import { types, sizes } from './bulma';
+import { TYPES, SIZES} from './BulmaConstants';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -27,25 +27,25 @@ export default Vue.extend({
   components: { DControl },
   inheritAttrs: false,
   props: {
-    type: {
+    color: {
       type: String,
       default: undefined,
       validator(value: string) {
-        return types.includes(value);
+        return TYPES.includes(value);
       },
     },
     size: {
       type: String,
       default: undefined,
       validator(value: string) {
-        return sizes.includes(value);
+        return SIZES.includes(value);
       },
     }
   },
   computed: {
     cssClass(): Record<string, boolean> {
       return {
-        [`is-${this.type}`]: this.type !== undefined,
+        [`is-${this.color}`]: this.color !== undefined,
         [`is-${this.size}`]: this.size !== undefined,
       };
     },

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { imageSizes } from './bulma';
+import { IMAGE_SIZES } from './BulmaConstants';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -19,7 +19,7 @@ export default Vue.extend({
       type: String,
       default: undefined,
       validator(value: string) {
-        return imageSizes.includes(value);
+        return IMAGE_SIZES.includes(value);
       },
     }
   },

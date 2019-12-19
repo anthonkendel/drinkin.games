@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { types } from './bulma';
+import { TYPES } from './BulmaConstants';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -21,7 +21,7 @@ export default Vue.extend({
       type: String,
       default: undefined,
       validator(value: string) {
-        return types.includes(value);
+        return TYPES.includes(value);
       },
     },
     fullwidth: {

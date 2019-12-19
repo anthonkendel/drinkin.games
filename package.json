@@ -58,7 +58,8 @@
       "@typescript-eslint/indent": ["error", 2],
       "@typescript-eslint/explicit-function-return-type": ["off"],
       "@typescript-eslint/semi": ["error", "always"],
-      "quotes": ["error", "single"]
+      "quotes": ["error", "single"],
+      "vue/html-self-closing": ["off"]
     },
     "plugins": [
       "vue"

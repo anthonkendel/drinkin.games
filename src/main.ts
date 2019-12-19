@@ -5,11 +5,11 @@ import Vue from 'vue';
 import { VNode } from 'vue/types/umd';
 import App from '@/App.vue';
 import '@/sw';
-import { GenericPlugin } from '@/components/generic/plugin';
+import { ComponentPlugin } from '@/logic/ComponentPlugin';
 
 Vue.config.productionTip = false;
 
-Vue.use(GenericPlugin);
+Vue.use(ComponentPlugin);
 
 
 new Vue({

@@ -1,4 +1,4 @@
-export const types = [
+export const TYPES = [
   'white',
   'light',
   'dark',
@@ -12,13 +12,13 @@ export const types = [
   'danger',
 ];
 
-export const sizes = [
+export const SIZES = [
   'small',
   'medium',
   'large',
 ];
 
-export const imageSizes = [
+export const IMAGE_SIZES = [
   '16',
   '24',
   '32',

@@ -14,7 +14,7 @@
 
       <div class="column is-narrow">
         <d-control>
-          <d-button type="primary">
+          <d-button color="primary">
             Primary
           </d-button>
         </d-control>
@@ -26,24 +26,28 @@
     <d-input-field>
       Default
     </d-input-field>
-    <d-input-field type="primary">
+    <d-input-field color="primary">
       Primary
     </d-input-field>
+
+      
+    <d-button @click="onClickOpenModal">
+      Open modal
+    </d-button>
   </div>
 </template>
 
 <script lang="ts">
-import { DButton } from '@/components/generic';
-import { DControl } from '@/components/generic';
-import { DInputField } from '@/components/generic';
-
+import { open } from '@/logic/Modal';
+import { DModal } from '@/components/generic';
 import Vue from 'vue';
+
 export default Vue.extend({
   name: 'Sandbox',
-  components: {
-    DButton,
-    DControl,
-    DInputField
-  },
+  methods: {
+    onClickOpenModal(): void {
+      open(DModal);
+    },
+  }
 });
 </script>
