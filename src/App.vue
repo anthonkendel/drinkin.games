@@ -1,7 +1,6 @@
 <template>
   <div
     id="app"
-    class="container"
   >
     <main>
       <router-view />
@@ -16,3 +15,9 @@ export default Vue.extend({
   name: 'App',
 });
 </script>
+
+<style lang="scss" scoped>
+#app {
+  height: 100vh;
+}
+</style>

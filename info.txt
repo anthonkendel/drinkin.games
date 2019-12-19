@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: sen-extrabold
+font link: http://www.philatype.com/#sen
+font author: Philatype
+font author site: http://www.philatype.com/
+
+
+icon designer: Mark Caron
+icon designer link: /heyoka
+        
+{"bg-gradient-0":"#A92580","bg-gradient-1":"#F7BC00","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      

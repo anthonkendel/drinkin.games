@@ -1,39 +1,32 @@
 <template>
-  <button
-    class="button"
-    v-bind="$attrs"
+  <figure
+    class="image"
     :class="cssClass"
-    v-on="$listeners"
   >
     <slot />
-  </button>
+  </figure>
 </template>
 
 <script lang="ts">
-import { types } from './bulma';
+import { imageSizes } from './bulma';
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'DButton',
+  name: 'DImage',
   inheritAttrs: false,
   props: {
-    color: {
+    size: {
       type: String,
       default: undefined,
       validator(value: string) {
-        return types.includes(value);
+        return imageSizes.includes(value);
       },
-    },
-    fullwidth: {
-      type: Boolean,
-      default: undefined,
     }
   },
   computed: {
     cssClass(): Record<string, boolean> {
       return {
-        [`is-${this.color}`]: this.color !== undefined,
-        'is-fullwidth': this.fullwidth,
+        [`is-${this.size}x${this.size}`]: this.size !== undefined,
       };
     },
   }

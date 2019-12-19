@@ -17,3 +17,13 @@ export const sizes = [
   'medium',
   'large',
 ];
+
+export const imageSizes = [
+  '16',
+  '24',
+  '32',
+  '48',
+  '64',
+  '96',
+  '128',
+];
