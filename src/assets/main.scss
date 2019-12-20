@@ -1,6 +1,11 @@
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 
+
+.has-width-160 {
+    width: 160px;
+}
+
 $primary: #A92580;
 $primary-invert: findColorInvert($primary);
 

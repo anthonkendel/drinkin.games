@@ -9,7 +9,7 @@
               <d-image>
                 <img
                   src="../assets/LogoWhiteMono.svg"
-                  alt="Drinkin.games logo"
+                  alt="Drinkin.games"
                 />
               </d-image>
             </div>
