@@ -45,7 +45,7 @@ import SignUpModal from '@/components/app/SignUpModal.vue';
 import { open } from '@/logic/Modal';
 
 export default Vue.extend({
-  name: 'Start',
+  name: 'TheStart',
   methods: {
     onClickLogin(): void {
       open(LoginModal);

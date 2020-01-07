@@ -4,22 +4,22 @@
   >
     <main>
       <template v-if="$store.state.isLoggedIn">
-        <top-bar />
+        <the-top-bar />
         <router-view />
       </template>
-      <start v-else />
+      <the-start v-else />
     </main>
   </div>
 </template>
 
 <script lang="ts">
-import TopBar from '@/components/app/TopBar.vue';
-import Start from '@/views/Start.vue';
+import TheTopBar from '@/components/app/TheTopBar.vue';
+import TheStart from '@/views/TheStart.vue';
 import Vue from 'vue';
 
 export default Vue.extend({
   name: 'App',
-  components: { Start, TopBar },
+  components: { TheStart, TheTopBar },
 });
 </script>
 

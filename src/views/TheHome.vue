@@ -49,7 +49,7 @@ import ProfileList from '@/components/app/ProfileList.vue';
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Home',
+  name: 'TheHome',
   components: { GameList, ProfileList },
 }); 
 </script>

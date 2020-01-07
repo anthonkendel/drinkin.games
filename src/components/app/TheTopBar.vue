@@ -34,7 +34,7 @@
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-  name: 'TopBar',
+  name: 'TheTopBar',
   data() {
     return {
       logoAltText: 'Drinkin.games',
