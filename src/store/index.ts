@@ -20,7 +20,19 @@ export class Game {
   ) {}
 
   public static random(): Game {
-    return new Game(faker.random.uuid(), faker.lorem.word(), faker.lorem.words(300));
+    return new Game(
+      faker.random.uuid(),
+      faker.lorem.word(),
+      faker.lorem.words(300),
+      [
+        faker.random.number({ min: 1, max: 5 }),
+        faker.random.number({ min: 1, max: 5 }),
+        faker.random.number({ min: 1, max: 5 }),
+        faker.random.number({ min: 1, max: 5 }),
+      ],
+      faker.date.recent(-4),
+      faker.date.recent(0),
+    );
   }
 }
 
