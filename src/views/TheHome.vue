@@ -23,19 +23,23 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-          <div class="column is-8-tablet is-12-mobile">
+          <div class="column is-12-mobile">
             <h2 class="title is-4">
               My profile
             </h2>
 
-            <profile-list />
-          </div>
+            <div class="columns">
+              <div class="column is-8-tablet is-12-mobile">
+                <profile-list />
+              </div>
 
-          <div class="column is-4-tablet is-12-mobile">
-            <h2 class="title is-5">
-              Your games
-            </h2>
-            <game-list />
+              <div class="column is-4-tablet is-12-mobile">
+                <h2 class="title is-5">
+                  Your games
+                </h2>
+                <game-list />
+              </div>
+            </div>
           </div>
         </div>
       </div>
