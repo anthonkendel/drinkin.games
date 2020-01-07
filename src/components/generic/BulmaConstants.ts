@@ -1,15 +1,19 @@
-export const TYPES = [
-  'white',
-  'light',
-  'dark',
-  'black',
-  'text',
+export const BASE_TYPES = [
   'primary',
   'link',
   'info',
   'success',
   'warning',
   'danger',
+];
+
+export const TYPES = [
+  'white',
+  'light',
+  'dark',
+  'black',
+  'text',
+  ...BASE_TYPES,
 ];
 
 export const SIZES = [

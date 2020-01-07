@@ -19,17 +19,17 @@
             <d-button
               color="light"
               type="button"
-              @click="onClickSignUp"
+              @click="onClickLogin"
             >
-              Sign up
+              Login
             </d-button>
 
             <d-button
               color="light"
               type="button"
-              @click="onClickLogin"
+              @click="onClickSignUp"
             >
-              Login
+              Sign up
             </d-button>
           </div>
         </div>

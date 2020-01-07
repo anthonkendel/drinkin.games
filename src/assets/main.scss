@@ -12,6 +12,10 @@ $primary-invert: findColorInvert($primary);
 $info: #F7BC00;
 $info-invert: findColorInvert($info);
 
+$size-1: 4rem;
+$body-font-size: 1.1em;
+
+
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (
     "white": ($white, $black),

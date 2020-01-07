@@ -9,17 +9,18 @@
           <d-image class="has-width-160 is-hidden-mobile">
             <img
               src="../../assets/LogoCover.png"
-              alt="Drinkin.games"
+              :alt="logoAltText"
             />
           </d-image>
+
           <d-image
             size="64"
-            class=" is-hidden-tablet"
+            class="is-hidden-tablet"
           >
             <img
               class="is-hidden-tablet"
               src="../../assets/LogoProfile.png"
-              alt="Drinkin.games"
+              :alt="logoAltText"
             />
           </d-image>
         </router-link>
@@ -34,5 +35,10 @@
 import Vue from 'vue';
 export default Vue.extend({
   name: 'TopBar',
+  data() {
+    return {
+      logoAltText: 'Drinkin.games',
+    };
+  }
 });
 </script>
