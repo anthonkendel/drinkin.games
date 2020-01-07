@@ -3,18 +3,32 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-          <div class="column is-6-tablet is-12-mobile">
+          <div class="column is-5-tablet is-12-mobile">
             <h2 class="title is-4">
               Top games
             </h2>
             <game-list />
           </div>
 
-          <div class="column is-6-tablet is-12-mobile">
+          <div class="column is-5-tablet is-12-mobile">
             <h2 class="title is-4">
               New games
             </h2>
             <game-list />
+          </div>
+
+          <div class="column is-2-tablet is-12-mobile">
+            <h2 class="title is-4">
+              Actions
+            </h2>
+            <div class="buttons">
+              <d-button
+                color="primary"
+                @click="onClickCreateGame"
+              >
+                Create game
+              </d-button>
+            </div>
           </div>
         </div>
       </div>
@@ -50,10 +64,17 @@
 <script lang="ts">
 import GameList from '@/components/app/GameList.vue';
 import ProfileList from '@/components/app/ProfileList.vue';
+import CreateGameModal from '@/components/app/CreateGameModal.vue';
 import Vue from 'vue';
+import { open } from '@/logic/Modal';
 
 export default Vue.extend({
   name: 'TheHome',
   components: { GameList, ProfileList },
+  methods: {
+    onClickCreateGame(): void {
+      open(CreateGameModal);
+    },
+  }
 }); 
 </script>
