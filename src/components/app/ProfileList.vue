@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-list">
+  <div>
     <ul>
       <li>
         <strong>Username:</strong>
@@ -21,13 +21,3 @@ export default Vue.extend({
   name: 'ProfileList'
 });
 </script>
-
-
-<style lang="scss" scoped>
-.profile-list {
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
-  margin-left: 0.6em;
-  margin-right: 0.6em;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="game-list">
+  <div>
     <ol>
       <li
         v-for="game in games"
@@ -46,9 +46,3 @@ export default Vue.extend({
   }
 });
 </script>
-
-<style lang="scss" scoped>
-.game-list {
-  margin: 1.6em;
-}
-</style>

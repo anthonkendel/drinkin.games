@@ -6,7 +6,7 @@
           :to="{ name: 'Home'} "
           title="Home"
         >
-          <d-image class="has-width-160 is-hidden-mobile">
+          <d-image class="is-160 is-hidden-mobile">
             <img
               src="../../assets/LogoCover.png"
               :alt="logoAltText"
