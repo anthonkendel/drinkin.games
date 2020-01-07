@@ -7,14 +7,14 @@
             <h2 class="title is-4">
               Top games
             </h2>
-            <game-list />
+            <game-list :games="$store.state.games" />
           </div>
 
           <div class="column is-5-tablet is-12-mobile">
             <h2 class="title is-4">
               New games
             </h2>
-            <game-list />
+            <game-list :games="$store.state.games" />
           </div>
 
           <div class="column is-2-tablet is-12-mobile">
@@ -51,7 +51,7 @@
                 <h2 class="title is-5">
                   Your games
                 </h2>
-                <game-list />
+                <game-list :games="$store.state.games" />
               </div>
             </div>
           </div>

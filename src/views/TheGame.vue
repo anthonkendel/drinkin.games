@@ -3,10 +3,10 @@
     <section class="section">
       <div class="container">
         <h2 class="title">
-          {{ gId }}
+          {{ game.title }}
         </h2>
         <div class="details">
-          {{ details }}
+          {{ game.instructions }}
         </div>
       </div>
     </section>
@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Game } from '../store';
 export default Vue.extend({
   name: 'TheGame',
   props: {
@@ -24,14 +25,10 @@ export default Vue.extend({
       default: '-1'
     }
   },
-  data() {
-    return {
-      details: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
-Tenetur quibusdam eum quos expedita laborum totam velit perspiciatis exercitationem architecto sapiente?
-
-Hic recusandae eius magni fuga accusantium optio quas nulla maiores?
-`
-    };
+  computed: {
+    game(): Game | object {
+      return this.$store.getters.game(this.gId) || {};
+    }
   }
 });
 </script>

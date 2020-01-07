@@ -20,6 +20,7 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@types/faker": "^4.1.8",
     "@types/jest": "^24.0.19",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
@@ -33,6 +34,7 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "faker": "^4.1.0",
     "html-validate": "^2",
     "html-validate-vue": "^2",
     "sass": "^1.23.7",
@@ -74,7 +76,9 @@
       ],
       "vue/html-self-closing": [
         "off"
-      ]
+      ],
+      "@typescript-eslint/no-parameter-properties": ["off"],
+      "@typescript-eslint/no-object-literal-type-assertion": ["off"]
     },
     "plugins": [
       "vue"
