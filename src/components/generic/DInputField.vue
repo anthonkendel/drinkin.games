@@ -7,12 +7,23 @@
       <slot />
     </label>
     <d-control>
-      <input
-        class="input"
-        v-bind="$attrs"
-        :class="cssClass"
-        v-on="$listeners"
-      >
+      <template v-if="element === 'input'">
+        <input
+          class="input"
+          v-bind="$attrs"
+          :class="cssClass"
+          v-on="listeners"
+        >
+      </template>
+      
+      <template v-if="element === 'textarea'">
+        <textarea
+          class="textarea"
+          v-bind="$attrs"
+          :class="cssClass"
+          v-on="listeners"
+        ></textarea>
+      </template>
     </d-control>
   </div>
 </template>
@@ -30,7 +41,7 @@ export default Vue.extend({
     color: {
       type: String,
       default: undefined,
-      validator(value: string) {
+      validator(value: string): boolean {
         return TYPES.includes(value);
       },
     },
@@ -40,6 +51,13 @@ export default Vue.extend({
       validator(value: string) {
         return SIZES.includes(value);
       },
+    },
+    element: {
+      type: String,
+      default: 'input',
+      validator(value: string): boolean {
+        return ['input', 'textarea'].includes(value);
+      }
     }
   },
   computed: {
@@ -49,6 +67,17 @@ export default Vue.extend({
         [`is-${this.size}`]: this.size !== undefined,
       };
     },
+    listeners(): Record<string, Function | Function[]> {
+      return {
+        ...this.$listeners,
+        input: (event: Event) => {
+          if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+            this.$emit('input', event.target.value);
+          }
+        }
+      };
+    }
+
   }
 });
 </script>
